@@ -23,7 +23,7 @@ visited = {}
 visited[start] = true
 found = false
 ;
-while q.last - q.first > 0 do
+repeat 
   node = q.elements[q.first]
   q.elements[q.first] = nil
   q.first = q.first + 1
@@ -34,7 +34,7 @@ while q.last - q.first > 0 do
     q.first = q.last
   else 
     i = 1
-    repeat 
+    while i <= # graph[node] do 
       next = graph[node][i]
       if not visited[next] then
         q.elements[q.last] = next
@@ -43,7 +43,7 @@ while q.last - q.first > 0 do
         ;
       end
       i = i + 1
-    until 
-      i > # graph[node]
-  end
-end
+    end
+  end 
+until
+  q.last - q.first == 0

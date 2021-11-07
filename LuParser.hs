@@ -11,7 +11,7 @@ module LuParser where
 {-
 Make sure that you read the [`LuSyntax`](http://www.cis.upenn.edu/~cis552/current/hw/hw06/LuSyntax.html) module that describes
 the syntax of Lu before continuing. If you have questions, you
-can also consult the [Lu manual](http://www.cis.upenn.edu/~cis552/LuManual.html).
+can also consult the [Lu manual](http://www.cis.upenn.edu/~cis552/current/LuManual.html).
 
 This problem also uses definitions from the Parsers module from the lecture
 notes, gathered together in the module [`Parser.hs`](Parser.hs). Operations

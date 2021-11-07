@@ -5,10 +5,9 @@ An Interpreter for Lu
 In this problem, you will use the state monad to build an *interpreter* and a stepper for
 our simple imperative language.
 
-Make sure that you read the `LuSyntax` module that describes the syntax of
-this language before continuing. If you have questions, you also might want
-to consult the [Lu Manual](LuManual.md).
-
+Make sure that you read the [`LuSyntax`](http://www.cis.upenn.edu/~cis552/current/hw/hw06/LuSyntax.html) module that describes
+the syntax of Lu before continuing. If you have questions, you
+can also consult the [Lu manual](http://www.cis.upenn.edu/~cis552/current/LuManual.html).
 -}
 
 module LuStepper where
@@ -24,7 +23,7 @@ Because the Lu language includes primitive tables, we'll also use the finite
 -}
 
 import Control.Monad (when)
-import Data.Map (Map)
+import Data.Map (Map, (!?))
 import qualified Data.Map as Map
 import LuSyntax
 import State (State)
@@ -474,10 +473,10 @@ tExecTable =
       ]
 
 tExecBfs :: Test
-tExecBfs = "exec wBfs" ~: TestList [global Map.!? StringVal "found" ~?= Just (BoolVal True)]
+tExecBfs = "exec wBfs" ~: TestList [global !? StringVal "found" ~?= Just (BoolVal True)]
   where
     ss = exec wBfs initialStore
-    global = case ss Map.!? globalTableName of
+    global = case ss !? globalTableName of
       Just g -> g
       Nothing -> Map.empty
 
@@ -613,11 +612,11 @@ tExecStepBfs :: Test
 tExecStepBfs =
   "execStep wBfs"
     ~: TestList
-      [ global Map.!? StringVal "found" ~?= Just (BoolVal True)
+      [ global !? StringVal "found" ~?= Just (BoolVal True)
       ]
   where
     ss = execStep wBfs initialStore
-    global = case ss Map.!? globalTableName of
+    global = case ss !? globalTableName of
       Just g -> g
       Nothing -> Map.empty
 

@@ -7,11 +7,7 @@ combinators by developing and implementing a small, imperative programming
 language.
 
 This project will require you to first read about the Lu programming language
-in the module
-
-[LuSyntax](LuSyntax.html)
-
-and then work in three separate modules
+in the module [LuSyntax](LuSyntax.html) and then work in three separate modules.
 
 1. [LuStepper](LuStepper.html) (practice with State monad)
 2. [LuParser](LuParser.html) (practice with parsing)
