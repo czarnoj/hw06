@@ -1,0 +1,42 @@
+name:                hw06
+version:             0.1.0.0
+synopsis:            Homework assignment for CIS 552
+homepage:            https://www.cis.upenn.edu/~cis552/current/index.html
+license:             OtherLicense
+license-file:        LICENSE
+author:              University of Pennsylvania
+maintainer:          sweirich@cis.upenn.edu
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+cabal-version:       >=1.10
+
+
+library
+  exposed-modules:     Main, 
+                       LuSyntax,
+                       LuParser,
+                       LuStepper,
+                       State, 
+                       Parser
+  build-depends:       base == 4.14.1.0
+                     , QuickCheck == 2.14.2
+                     , containers ==0.6.2.1
+                     , HUnit ==1.6.2.0
+                     , pretty == 1.1.3.6
+  default-language:    Haskell2010
+  ghc-options:         -Wincomplete-patterns -Wno-orphans -Wno-unused-imports
+
+executable hw06
+  main-is:             Main.hs
+  other-modules:       LuSyntax,
+                       LuParser,
+                       LuStepper,
+                       State, 
+                       Parser
+  build-depends:       base == 4.14.1.0
+                     , QuickCheck == 2.14.2
+                     , containers ==0.6.2.1
+                     , HUnit ==1.6.2.0
+                     , pretty == 1.1.3.6
+  default-language:    Haskell2010
+  ghc-options:         -Wincomplete-patterns -Wno-orphans
