@@ -91,9 +91,11 @@ extendedStore =
 Any store can be pretty-printed and displayed concisely.
 -}
 
--- >>> pp initialStore
+-- >>> oneLine initialStore
+-- "{_G = {}}"
 
--- >>> pp extendedStore
+-- >>> oneLine extendedStore
+-- "{_G = {t = <_t1> x = 3} _t1 = {[2] = <_t1> y = true}}"
 
 {-
 Every part of the store can be referred to by the name of a table and a key
